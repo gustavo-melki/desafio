@@ -23,6 +23,21 @@
             </objects>
             <point key="canvasLocation" x="-28" y="-10"/>
         </scene>
+        <!--List Repo View Controller-->
+        <scene sceneID="YrK-sn-89v">
+            <objects>
+                <viewController storyboardIdentifier="nextView" id="DnB-yI-hSL" customClass="ListRepoViewController" customModule="desafioiOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jYI-vn-fKl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="JPz-cA-r0r"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bSw-T0-4Qu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="678" y="-10"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">

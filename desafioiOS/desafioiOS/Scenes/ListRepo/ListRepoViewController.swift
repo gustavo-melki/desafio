@@ -1,23 +1,21 @@
 //
-//  ListUsersViewController.swift
+//  ListRepoViewController.swift
 //  desafioiOS
 //
 //  Created by Gustavo Melki Leal on 15/08/23.
 //
 
+import Foundation
 import UIKit
 
-class ListUserViewController: UIViewController {
+class ListRepoViewController: UIViewController {
+  
     lazy var activity: UIActivityIndicatorView = {
         let activity = UIActivityIndicatorView()
         activity.hidesWhenStopped = true
         activity.startAnimating()
         return activity
     }()
-  
-    lazy var searchBar: UISearchBar = {
-     return searchBar
-   }()
     
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
@@ -25,14 +23,15 @@ class ListUserViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.rowHeight = 120
-        tableView.register(UserCell.self, forCellReuseIdentifier: String(describing: UserCell.self))
+        tableView.register(RepoCell.self, forCellReuseIdentifier: String(describing: RepoCell.self))
         tableView.backgroundView = activity
         tableView.tableFooterView = UIView()
         return tableView
     }()
     
-    var users = [User]()
-    var viewModel: ListUsersViewModel!
+    var repos = [Repo]()
+    var viewModel: ListRepoViewModel!
+    var selectedUser: String?
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -51,14 +50,14 @@ class ListUserViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-        viewModel = ListUsersViewModel(service: ListUserService())
+        viewModel = ListRepoViewModel(service: ListRepoService())
         configureViews()
         
-        navigationController?.title = "Lista de Usuários"
+        navigationController?.title = "Lista de Repositorios"
         
         loadData()
     }
+  
   
   private func showAlert(title: String, message: String, btnTitle: String = "OK") {
       let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -68,8 +67,7 @@ class ListUserViewController: UIViewController {
   }
     
     func configureViews() {
-      
-      
+        view.backgroundColor = .red
         view.addSubview(tableView)
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -77,9 +75,6 @@ class ListUserViewController: UIViewController {
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor)
         ])
-      
-      
-                                  
     }
     
     
@@ -88,8 +83,8 @@ class ListUserViewController: UIViewController {
             DispatchQueue.main.async {
               
               switch result {
-                case .success (let users):
-                 self.users = users
+                case .success (let repos):
+                 self.repos = repos
                  self.tableView.reloadData()
                  self.activity.stopAnimating()
                 
@@ -101,37 +96,21 @@ class ListUserViewController: UIViewController {
     }
 }
 
-extension ListUserViewController : UITableViewDataSource, UITableViewDelegate {
+extension ListRepoViewController : UITableViewDataSource, UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      return users.count
+      return repos.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: UserCell.self), for: indexPath) as? UserCell else {
+      guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RepoCell.self), for: indexPath) as? RepoCell else {
           return UITableViewCell()
       }
       
-      let user = users[indexPath.row]
-      cell.fullnameLabel.text = user.login
-      
-      if let urlPhoto = URL(string: user.avatar_url) {
-          do {
-              let data = try Data(contentsOf: urlPhoto)
-              let image = UIImage(data: data)
-              cell.userImage.image = image
-          } catch _ {}
-      }
-
+      let repo = repos[indexPath.row]
+      cell.fullnameLabel.text = repo.name
       return cell
   }
   
-  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    
-    let storyBoard : UIStoryboard = UIStoryboard(name: "main", bundle:nil)
-    let listRepoViewController = storyBoard.instantiateViewController(withIdentifier: "nextView") as! ListRepoViewController
-    SelectedRepo.shared.selectedUser = users[indexPath.row].login
-    self.present(listRepoViewController, animated:true, completion:nil)
-  }
   
 }
