@@ -43,7 +43,7 @@ class UserCell: UITableViewCell {
     userImage.heightAnchor.constraint(equalToConstant: 100).isActive = true
     userImage.widthAnchor.constraint(equalToConstant: 100).isActive = true
     
-    fullnameLabel.leadingAnchor.constraint(equalTo: userImage.trailingAnchor, constant: 16).isActive = true
+    fullnameLabel.leadingAnchor.constraint(equalTo: userImage.trailingAnchor, constant: 30).isActive = true
     fullnameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15).isActive = true
     fullnameLabel.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
     fullnameLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true

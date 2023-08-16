@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xrk-z5-amv">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -9,19 +9,59 @@
     </dependencies>
     <scenes>
         <!--List User View Controller-->
-        <scene sceneID="s0d-6b-0kx">
+        <scene sceneID="cIh-UF-oGx">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="ListUserViewController" customModule="desafioiOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                <viewController id="Xrk-z5-amv" customClass="ListUserViewController" customModule="desafioiOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vai-Tb-8Ts">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="b6r-eg-r7G">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="OWl-In-RTz">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="Xrk-z5-amv" id="iUe-Sq-dHK"/>
+                                    </connections>
+                                </searchBar>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserCell" rowHeight="117" id="K47-3T-hFX" customClass="UserCell" customModule="desafioiOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="88.5" width="414" height="117"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K47-3T-hFX" id="qTP-uP-q7Y">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="117"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <rect key="contentStretch" x="0.050000000000000003" y="0.0" width="1" height="1"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Xrk-z5-amv" id="Sq4-g6-uev"/>
+                                    <outlet property="delegate" destination="Xrk-z5-amv" id="OzS-fe-Lq0"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="OQV-0a-kEM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="b6r-eg-r7G" firstAttribute="leading" secondItem="OQV-0a-kEM" secondAttribute="leading" id="1jb-XN-kqz"/>
+                            <constraint firstItem="b6r-eg-r7G" firstAttribute="trailing" secondItem="OQV-0a-kEM" secondAttribute="trailing" id="6bW-zz-Fk9"/>
+                            <constraint firstAttribute="bottom" secondItem="b6r-eg-r7G" secondAttribute="bottom" id="wRc-Cf-4ch"/>
+                            <constraint firstItem="b6r-eg-r7G" firstAttribute="top" secondItem="Vai-Tb-8Ts" secondAttribute="top" id="zQt-1K-yL9"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="searchBar" destination="OWl-In-RTz" id="bQl-0j-lmN"/>
+                        <outlet property="tableview" destination="b6r-eg-r7G" id="KYa-53-nAd"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kgL-cG-fyi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-28" y="-10"/>
+            <point key="canvasLocation" x="318.84057971014494" y="-21.428571428571427"/>
         </scene>
         <!--List Repo View Controller-->
         <scene sceneID="YrK-sn-89v">
@@ -36,7 +76,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bSw-T0-4Qu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="678" y="-10"/>
+            <point key="canvasLocation" x="1250.7246376811595" y="-21.428571428571427"/>
         </scene>
     </scenes>
     <resources>
