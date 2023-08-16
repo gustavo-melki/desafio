@@ -4,7 +4,7 @@ Esse desafio tem como objetivo desenvolver uma aplicação, que consuma a api do
 
 Features:
 - Lista de Usarios do Github
-- Tela de Detalha com lista de repositorios por usuario
+- Tela de detalhe com lista de repositórios por usuário
 - Filtro de busca por usuário
 
 Stack:
