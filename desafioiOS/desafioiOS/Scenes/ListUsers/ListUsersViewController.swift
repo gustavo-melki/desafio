@@ -12,13 +12,11 @@ class ListUserViewController: UIViewController  {
   @IBOutlet weak var tableview: UITableView!
   @IBOutlet weak var searchBar: UISearchBar!
   
-  
   var users = [User]()
   var viewModel: ListUsersViewModel!
   
   var filtredData = [User]()
   var isSearching = false
-
 
   lazy var activity: UIActivityIndicatorView = {
     let activity = UIActivityIndicatorView()

@@ -11,7 +11,7 @@
 		EC69F3DD2A8BC731007DC02E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC69F3DC2A8BC731007DC02E /* SceneDelegate.swift */; };
 		EC69F3E42A8BC736007DC02E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC69F3E32A8BC736007DC02E /* Assets.xcassets */; };
 		EC69F3E72A8BC736007DC02E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC69F3E52A8BC736007DC02E /* LaunchScreen.storyboard */; };
-		EC69F3F22A8BC737007DC02E /* desafioiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC69F3F12A8BC737007DC02E /* desafioiOSTests.swift */; };
+		EC69F3F22A8BC737007DC02E /* ListRepoViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC69F3F12A8BC737007DC02E /* ListRepoViewModelTests.swift */; };
 		EC69F3FC2A8BC737007DC02E /* desafioiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC69F3FB2A8BC737007DC02E /* desafioiOSUITests.swift */; };
 		EC69F3FE2A8BC737007DC02E /* desafioiOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC69F3FD2A8BC737007DC02E /* desafioiOSUITestsLaunchTests.swift */; };
 		EC69F40D2A8BC8A0007DC02E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC69F40C2A8BC8A0007DC02E /* User.swift */; };
@@ -25,6 +25,7 @@
 		EC69F41E2A8BED2C007DC02E /* ListRepoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC69F41D2A8BED2C007DC02E /* ListRepoViewModel.swift */; };
 		EC69F4202A8BEDD8007DC02E /* ListRepoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC69F41F2A8BEDD8007DC02E /* ListRepoViewController.swift */; };
 		EC69F4222A8BEE64007DC02E /* RepoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC69F4212A8BEE63007DC02E /* RepoCell.swift */; };
+		EC69F4262A8D40D9007DC02E /* ListUserViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC69F4252A8D40D9007DC02E /* ListUserViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +53,7 @@
 		EC69F3E62A8BC736007DC02E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC69F3E82A8BC736007DC02E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC69F3ED2A8BC737007DC02E /* desafioiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = desafioiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EC69F3F12A8BC737007DC02E /* desafioiOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = desafioiOSTests.swift; sourceTree = "<group>"; };
+		EC69F3F12A8BC737007DC02E /* ListRepoViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRepoViewModelTests.swift; sourceTree = "<group>"; };
 		EC69F3F72A8BC737007DC02E /* desafioiOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = desafioiOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC69F3FB2A8BC737007DC02E /* desafioiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = desafioiOSUITests.swift; sourceTree = "<group>"; };
 		EC69F3FD2A8BC737007DC02E /* desafioiOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = desafioiOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -67,6 +68,7 @@
 		EC69F41D2A8BED2C007DC02E /* ListRepoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRepoViewModel.swift; sourceTree = "<group>"; };
 		EC69F41F2A8BEDD8007DC02E /* ListRepoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRepoViewController.swift; sourceTree = "<group>"; };
 		EC69F4212A8BEE63007DC02E /* RepoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoCell.swift; sourceTree = "<group>"; };
+		EC69F4252A8D40D9007DC02E /* ListUserViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +133,8 @@
 		EC69F3F02A8BC737007DC02E /* desafioiOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				EC69F3F12A8BC737007DC02E /* desafioiOSTests.swift */,
+				EC69F3F12A8BC737007DC02E /* ListRepoViewModelTests.swift */,
+				EC69F4252A8D40D9007DC02E /* ListUserViewModelTests.swift */,
 			);
 			path = desafioiOSTests;
 			sourceTree = "<group>";
@@ -328,7 +331,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC69F3F22A8BC737007DC02E /* desafioiOSTests.swift in Sources */,
+				EC69F3F22A8BC737007DC02E /* ListRepoViewModelTests.swift in Sources */,
+				EC69F4262A8D40D9007DC02E /* ListUserViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
